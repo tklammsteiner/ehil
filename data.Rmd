@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "data"
+title: Data
 output: md_document
 nav_order: 2
 ---
