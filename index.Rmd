@@ -1,0 +1,12 @@
+---
+title: "Einsatz von Holzkohle in der industriellen Landwirtschaft"
+author: "Thomas Klammsteiner, PhD"
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 
