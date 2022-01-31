@@ -4,7 +4,7 @@ title: "About"
 author: "Thomas Klammsteiner, PhD"
 date: "`r format(Sys.Date(), '%Y-%m-%d')`"
 abstract: "Analysis of sequencing data obtained from soil and compost DNA extracts. The samples were collected over x years on "
-output: html_document
+output: md_document
 nav_order: 1
 ---
 
