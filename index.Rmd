@@ -1,12 +1,35 @@
 ---
-title: "Einsatz von Holzkohle in der industriellen Landwirtschaft"
+title: "Einsatz von Holzkohle in der industriellen Landwirtschaft (EHIL)"
 author: "Thomas Klammsteiner, PhD"
 date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+abstract: "Analysis of sequencing data obtained from soil and compost DNA extracts. The samples were collected over x years on "
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+\
+\
+
+## Data  
+
+
+
+\
+\
+
+## Methods  
+```{r, warning=F, message=F}
+library(dada2); packageVersion('dada2')
+library(tidyverse); packageVersion('tidyverse')
 ```
 
-## 
+
+
+\
+\
+
+## Results  
+
+
+
+\
+\
