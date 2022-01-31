@@ -4,7 +4,10 @@ title: Home
 nav_order: 1
 ---
 
-# Einsatz von Holzkohle in der industriellen Landwirtschaft (EHIL)
+# Einsatz von Holzkohle in der industriellen Landwirtschaft (EHIL)  
+
+<br/>
+
 Thomas Klammsteiner  
 Department of Microbiology, University of Innsbruck  
 Department of Ecology, University of Innsbruck  
