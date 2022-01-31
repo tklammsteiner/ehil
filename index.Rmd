@@ -1,7 +1,6 @@
 ---
 layout: default
-title: "About"
-abstract: "Analysis of sequencing data obtained from soil and compost DNA extracts. The samples were collected over x years on "
+title: "Home"
 output: md_document
 nav_order: 1
 ---
