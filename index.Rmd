@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Home
-output: md_document
 nav_order: 1
 ---
 
