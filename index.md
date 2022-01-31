@@ -1,3 +1,9 @@
+---
+layout: default
+title: Home
+nav_order: 1
+---
+
 ## Einsatz von Holzkohle in der industriellen Landwirtschaft (EHIL)
 
   
@@ -10,13 +16,6 @@
 
 ## Methods
 
-    library(dada2); packageVersion('dada2')
-
-    ## [1] '1.22.0'
-
-    library(tidyverse); packageVersion('tidyverse')
-
-    ## [1] '1.3.1'
 
   
   
