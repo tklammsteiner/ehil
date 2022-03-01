@@ -14,5 +14,5 @@ Thomas Klammsteiner
 
   
 ### Overview 
-Illumina MiSeq amplicon sequencing was performed to investigate bacterial and fungal communities within the samples. The bacterial V3-4 region was targeted using the primer set 341F (CCTACGGGNGGCWGCAG) and 805R (GACTACHVGGGTATCTAATCC), while the primer set ITS3 (GCATCGATGAAGAACGCAGC) and ITS4 (TCCTCCGCTTATTGATATGC) was used to target the fungal ITS2 region.  
+Illumina MiSeq amplicon sequencing was performed to investigate bacterial and fungal communities within the samples. The bacterial V3-4 region was targeted using the primer set **341F** (CCTACGGGNGGCWGCAG) and **805R** (GACTACHVGGGTATCTAATCC), while the primer set **ITS3** (GCATCGATGAAGAACGCAGC) and **ITS4** (TCCTCCGCTTATTGATATGC) was used to target the fungal ITS2 region.  
 
