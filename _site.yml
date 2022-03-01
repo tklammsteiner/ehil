@@ -1,0 +1,17 @@
+name: "EHIL"
+navbar:
+  title: "EHIL"
+  left:
+    - text: "About"
+      href: index.html
+    - text: "Data"
+      href: data.html
+    - text: "Report"
+      href: report.html
+  right: 
+    - icon: fa-envelope fa-lg
+      href: mailto:TBA@outlook.com
+output_dir: "docs"
+output:
+  html_document:
+    theme: sandstone
