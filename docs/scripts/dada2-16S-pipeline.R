@@ -13,16 +13,15 @@ library(Biostrings); packageVersion('Biostrings')
 library(tidyverse); packageVersion('tidyverse')
 
 # gather data
-path <- 'D:/ehil/Analysis_NGS01607_16S/Original_reads/'
-path <- 'D:/ehil/Analysis_NGS01607_16S/Trimmed_reads/'
+path <- 'D:/archive/ehil/Analysis_NGS01607_16S/Original_reads/' # original reads
+path <- 'D:/ehil/Analysis_NGS01607_16S/Trimmed_reads/' # trimmed reads
 list.files(path)
 
 fnFs <- sort(list.files(path, pattern = 'R1.fastq.gz', full.names = TRUE))
 fnRs <- sort(list.files(path, pattern = 'R2.fastq.gz', full.names = TRUE))
 
-
-fnFs <- sort(list.files(path, pattern = 'R1_trimmed.fastq.gz', full.names = TRUE))
-fnRs <- sort(list.files(path, pattern = 'R2_trimmed.fastq.gz', full.names = TRUE))
+#fnFs <- sort(list.files(path, pattern = 'R1_trimmed.fastq.gz', full.names = TRUE))
+#fnRs <- sort(list.files(path, pattern = 'R2_trimmed.fastq.gz', full.names = TRUE))
 
 sample.names <- sapply(strsplit(basename(fnFs), "_"), `[`, 1)
 

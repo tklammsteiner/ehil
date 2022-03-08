@@ -1,10 +1,23 @@
 ---
 title: "**Data**"
-output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-All sequence data generated within this study can be accessed via the BioProject accession number [PRN...](https://www.ncbi.nlm.nih.gov/bioproject/).
+</br>
+
+### Sequence data
+
+All sequence data generated within this study can be accessed via the BioProject accession number [PRJNA811776](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA811776). 
+</br>
+
+<ul>
+  <li>16S data are available at the Sequence Read Archive under the submission number [SUB11166467](https://submit.ncbi.nlm.nih.gov/subs/sra/SUB11166467)</li>
+  <li>ITS data are available at the Sequence Read Archive under the submission number [SUB11166581](https://submit.ncbi.nlm.nih.gov/subs/sra/SUB11166581)</li>
+</ul>
+
+</br>
+
+### Metadata
