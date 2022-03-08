@@ -4,6 +4,8 @@ library(tidyverse)
 library(readxl)
 library(ampvis2)
 
+dada2_asv <- read.csv("D:/Dokumente/Projekte/2019-EHIL/data/16S-seqtab.csv", sep = ";")
+
 taxmat <- read.csv("D:/archive/ehil/Analysis_NGS01607_16S/Trimmed_reads/mothur/final.tx.1.cons.taxonomy", sep = "") %>% 
   separate(col = Taxonomy, sep = ";", into = c('Kingdom', 'Phylum', 'Class', 'Order', 'Family', 'Genus')) %>% 
   select(-Size)
