@@ -21,3 +21,47 @@ All sequence data generated within this study can be accessed via the BioProject
 </br>
 
 ### Metadata
+
+```{r metadata, echo=F, warning=F, message=F}
+library(readxl)
+library(reactable)
+library(htmltools)
+library(tidyverse)
+
+metadata <- read_xlsx("data/metadata.xlsx", sheet = 2) %>% 
+  mutate(Collection_date = format(as.Date(Collection_date, format = "%Y-%m-%d"), "%Y-%m-%d"),
+         Date = format(as.Date(Date, format="%Y-%m-%d"),"%Y-%m-%d"))
+
+htmltools::browsable(
+  tagList(
+    div(
+      div(tags$label("Location", `for` = "location-filter")),
+      tags$select(
+        id = "location-filter",
+        onchange = "Reactable.setFilter('ehil-metadata', 'Location', this.value)",
+        tags$option("All", value = ""),
+        lapply(unique(metadata$Location), tags$option)
+        )
+      ),
+    tags$hr("aria-hidden" = "false"),
+    tags$button("Download as CSV", onclick = "Reactable.downloadDataCSV('ehil-metadata', 'metadata.csv')"),
+    
+    reactable(
+      metadata,
+      columns = list(
+        SampleID = colDef(minWidth = 130),
+        ID = colDef(minWidth = 40, align = 'right'),
+        EHIL_plate = colDef(align = 'right'),
+        Control_Treatment = colDef(minWidth = 140),
+        Collection_date = colDef(minWidth = 120)),
+      compact = TRUE,
+      searchable = T,
+      defaultPageSize = 15,
+      showPageSizeOptions = T,
+      elementId = 'ehil-metadata'
+      )
+  )
+)
+
+```
+
