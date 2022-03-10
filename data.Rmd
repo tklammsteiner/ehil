@@ -74,9 +74,9 @@ htmltools::browsable(
 
 </br>
 
-### ASV tables
+### Abundance and taxonomy
 
-The generated ASV tables can be downloaded here
+The generated ASV tables and assigned taxonomy can be downloaded here.
 
 ```{r ASV tables, echo=F, warning=F, message=F}
 tables <- data.frame(Processing = c('Raw output', 
@@ -92,17 +92,24 @@ tables <- data.frame(Processing = c('Raw output',
                      Fun_links = c('data/ITS-seqtab.xlsx', 
                                    'https://www.google.com', 
                                    'https://www.google.com', 
-                                   'data/ITS-taxa.xlsx'))
+                                   'data/ITS-taxa.xlsx'),
+                     Description = c('Raw output from DADA2 analysis',
+                                     'All ASVs without Genus-level taxonomy removed',
+                                     'Abundance rarefied to lowest sequencing depth',
+                                     'Taxonomy based by SILVA v.132 or UNITE 2021-05-10'))
 
 reactable(
   tables,
   columns = list(
-    Bacteria = colDef(cell = function(value, index) {
+    Processing = colDef(maxWidth = 170),
+    Bacteria = colDef(maxWidth = 100,
+                      cell = function(value, index) {
       url <- sprintf(tables[index, "Bac_links"], value)
       htmltools::tags$a(href = url, target = "_blank", as.character(value))
     }),
     Bac_links = colDef(show = F),
-    Fungi = colDef(cell = function(value, index) {
+    Fungi = colDef(maxWidth = 100,
+                   cell = function(value, index) {
       url <- sprintf(tables[index, "Fun_links"], value)
       htmltools::tags$a(href = url, target = "_blank", as.character(value))
     }),
