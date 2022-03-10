@@ -1,5 +1,12 @@
 ---
 title: "**Data**"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
 ---
 
 ```{r setup, include=FALSE}
@@ -63,5 +70,44 @@ htmltools::browsable(
   )
 )
 
+```
+
+</br>
+
+### ASV tables
+
+The generated ASV tables can be downloaded here
+
+```{r ASV tables, echo=F, warning=F, message=F}
+tables <- data.frame(Processing = c('Raw output', 
+                                    'Filtered output', 
+                                    'Subsampled output', 
+                                    'Taxonomy'), 
+                     Bacteria = rep('Download', 4),
+                     Bac_links = c('data/16S-seqtab.xlsx', 
+                                   'https://www.google.com', 
+                                   'https://www.google.com', 
+                                   'data/16S-taxa.xlsx'),
+                     Fungi = rep('Download', 4),
+                     Fun_links = c('data/ITS-seqtab.xlsx', 
+                                   'https://www.google.com', 
+                                   'https://www.google.com', 
+                                   'data/ITS-taxa.xlsx'))
+
+reactable(
+  tables,
+  columns = list(
+    Bacteria = colDef(cell = function(value, index) {
+      url <- sprintf(tables[index, "Bac_links"], value)
+      htmltools::tags$a(href = url, target = "_blank", as.character(value))
+    }),
+    Bac_links = colDef(show = F),
+    Fungi = colDef(cell = function(value, index) {
+      url <- sprintf(tables[index, "Fun_links"], value)
+      htmltools::tags$a(href = url, target = "_blank", as.character(value))
+    }),
+    Fun_links = colDef(show = F)
+  )
+)
 ```
 
