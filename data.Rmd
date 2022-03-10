@@ -116,5 +116,6 @@ reactable(
     Fun_links = colDef(show = F)
   )
 )
+
 ```
 
