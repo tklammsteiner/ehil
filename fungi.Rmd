@@ -1,0 +1,48 @@
+---
+title: "**Fungi**"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br/>
+
+### Data preparation {.tabset}
+
+#### Unfiltered
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_unfiltered.png">
+    <img src="output/ITS-rarecurve_unfiltered.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 1</b> - Rarefaction curve of unfiltered data.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+#### Filtered
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtered.png">
+    <img src="output/ITS-rarecurve_filtered.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 1</b> - Rarefaction curve of filtered data. The filter was set to in include ASVs with at least 2 reads in at least 10% of all samples.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+#### Rarefied (smallest sample)
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtr.png">
+    <img src="output/ITS-rarecurve_filtr.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 1</b> - Rarefaction curve of filtered and rarefied data. The data were rarefied to the smallest sample size.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+

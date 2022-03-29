@@ -6,8 +6,13 @@ navbar:
       href: index.html
     - text: "Data"
       href: data.html
-    - text: "Report"
-      href: report.html
+    - text: "Results"
+      menu:
+      - text: "Bacteria"
+        href: bacteria.html
+      - text: 'Fungi'
+        href: fungi.html
+
   right: 
     - icon: fa-envelope fa-lg
       href: mailto:TBA@outlook.com
