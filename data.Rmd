@@ -96,7 +96,7 @@ tables <- data.frame(Processing = c('Raw output',
                      Description = c('Raw output from DADA2 analysis',
                                      'All ASVs without Genus-level taxonomy removed',
                                      'Abundance rarefied to lowest sequencing depth',
-                                     'Taxonomy based by SILVA v.132 or UNITE 2021-05-10'))
+                                     'Taxonomy based on SILVA v.132 or UNITE 2021-05-10'))
 
 reactable(
   tables,
