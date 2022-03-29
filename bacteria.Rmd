@@ -15,8 +15,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <br/>
 
-
-
 # Data preparation {.tabset}
 
 ## Unfiltered
@@ -67,8 +65,12 @@ knitr::opts_chunk$set(echo = TRUE)
 <p>*click figure to see larger version*</p>
 </center>
 
+
+
 # {.unlisted .unnumbered}
 <br/>
+
+
 
 # Community composition 
 ## Stams {.tabset}
@@ -148,8 +150,12 @@ knitr::opts_chunk$set(echo = TRUE)
 <p>*click figure to see larger version*</p>
 </center>
 
+
+
 # {.unlisted .unnumbered}
 <br/>
+
+
 
 # Alpha diversity {.tabset}
 ## Stams (full dataset)
@@ -188,8 +194,43 @@ knitr::opts_chunk$set(echo = TRUE)
 <p>*click figure to see larger version*</p>
 </center>
 
+
+
 # {.unlisted .unnumbered}
 <br/>
+
+
+
+# Venn diagrams {.tabset}
+## Stams
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/16S-venn-stams.png">
+    <img src="output/16S-venn-stams.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 14</b> - Venn diagram showing shared ASVs across treatment groups before and after the experiment.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+## Pill
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/16S-venn-pill.png">
+    <img src="output/16S-venn-pill.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 15</b> - Venn diagram showing shared ASVs across treatment groups before and after the experiment.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
 
 
 # Differntial abundance {.tabset}
@@ -200,7 +241,7 @@ knitr::opts_chunk$set(echo = TRUE)
     <img src="output/16S-lefse-stams.png" width="100%" /></a>
     
 <figcaption align = "center">
-    <b>Fig. 14</b> - Linear discriminant analysis of effect size for each treatment in Stams (before/after).</figcaption>
+    <b>Fig. 16</b> - Linear discriminant analysis of effect size for samples each treatment in Stams (before/after).</figcaption>
 
 <p>*click figure to see larger version*</p>
 </center>
@@ -212,14 +253,17 @@ knitr::opts_chunk$set(echo = TRUE)
     <img src="output/16S-lefse-pill.png" width="100%" /></a>
     
 <figcaption align = "center">
-    <b>Fig. 15</b> - Linear discriminant analysis of effect size for each treatment in Pill (before/after).</figcaption>
+    <b>Fig. 17</b> - Linear discriminant analysis of effect size for samples each treatment in Pill (before/after).</figcaption>
 
 <p>*click figure to see larger version*</p>
 </center>
 
 
+
 # {.unlisted .unnumbered}
 <br/>
+
+
 
 # Ordination {.tabset}
 ## Stams
@@ -229,7 +273,7 @@ knitr::opts_chunk$set(echo = TRUE)
     <img src="output/16S-nmds-stams.png" width="100%" /></a>
     
 <figcaption align = "center">
-    <b>Fig. 16</b> - Non-metric multidimensional scaling for samples collected in Stams.</figcaption>
+    <b>Fig. 18</b> - Non-metric multidimensional scaling for samples collected in Stams.</figcaption>
 
 <p>*click figure to see larger version*</p>
 </center>
@@ -241,7 +285,48 @@ knitr::opts_chunk$set(echo = TRUE)
     <img src="output/16S-nmds-pill.png" width="100%" /></a>
     
 <figcaption align = "center">
-    <b>Fig. 17</b> - Non-metric multidimensional scaling for samples collected in Pill.</figcaption>
+    <b>Fig. 19</b> - Non-metric multidimensional scaling for samples collected in Pill.</figcaption>
 
 <p>*click figure to see larger version*</p>
 </center>
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
+
+
+# PERMANOVA {.tabset}
+## Stams
+```{r echo=F, warning=F, message=F}
+adonis_stams <- readRDS("output/16S-adonis_stams.txt")
+adonis_stams$aov.tab
+```
+
+## Pill
+```{r echo=F, warning=F, message=F}
+adonis_pill <- readRDS("output/16S-adonis_pill.txt")
+adonis_pill$aov.tab
+```
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
+
+
+# Pairwise PERMANOVA {.tabset}
+## Stams
+```{r echo=F, warning=F, message=F}
+ppermanova_stams <- readRDS("output/16S-ppermanova_stams.txt")
+ppermanova_stams
+```
+
+## Pill
+```{r echo=F, warning=F, message=F}
+ppermanova_pill <- readRDS("output/16S-ppermanova_pill.txt")
+ppermanova_pill
+```
+

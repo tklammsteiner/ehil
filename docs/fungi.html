@@ -29,6 +29,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -220,6 +223,75 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
 
 </head>
 
@@ -227,6 +299,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -287,10 +369,10 @@ $(document).ready(function () {
 
 
 <p><br/></p>
-<div id="data-preparation" class="section level3 tabset">
-<h3 class="tabset">Data preparation</h3>
-<div id="unfiltered" class="section level4">
-<h4>Unfiltered</h4>
+<div id="data-preparation" class="section level1 tabset">
+<h1 class="tabset">Data preparation</h1>
+<div id="unfiltered" class="section level2">
+<h2>Unfiltered</h2>
 <center>
 <p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_unfiltered.png"> <img src="output/ITS-rarecurve_unfiltered.png" width="100%" /></a></p>
 <figcaption align="center">
@@ -301,24 +383,24 @@ $(document).ready(function () {
 </p>
 </center>
 </div>
-<div id="filtered" class="section level4">
-<h4>Filtered</h4>
+<div id="filtered" class="section level2">
+<h2>Filtered</h2>
 <center>
 <p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtered.png"> <img src="output/ITS-rarecurve_filtered.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 1</b> - Rarefaction curve of filtered data. The filter was set to in include ASVs with at least 2 reads in at least 10% of all samples.
+<b>Fig. 2</b> - Rarefaction curve of filtered data. The filter was set to in include ASVs with at least 2 reads in at least 10% of all samples.
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
 </p>
 </center>
 </div>
-<div id="rarefied-smallest-sample" class="section level4">
-<h4>Rarefied (smallest sample)</h4>
+<div id="rarefied-smallest-sample" class="section level2">
+<h2>Rarefied (smallest sample)</h2>
 <center>
 <p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtr.png"> <img src="output/ITS-rarecurve_filtr.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 1</b> - Rarefaction curve of filtered and rarefied data. The data were rarefied to the smallest sample size.
+<b>Fig. 3</b> - Rarefaction curve of filtered and rarefied data. The data were rarefied to the smallest sample size.
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -326,9 +408,293 @@ $(document).ready(function () {
 </center>
 </div>
 </div>
+<div id="section" class="section level1 unlisted unnumbered">
+<h1 class="unlisted unnumbered"></h1>
+<p><br/></p>
+</div>
+<div id="community-composition" class="section level1">
+<h1>Community composition</h1>
+<div id="stams" class="section level2 tabset">
+<h2 class="tabset">Stams</h2>
+<div id="single-samples" class="section level3">
+<h3>Single samples</h3>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_stams.png"> <img src="output/ITS-phylum_stams.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 4</b> - Community composition at phylum level for each sample of the full dataset
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+<div id="grouped-samples" class="section level3">
+<h3>Grouped samples</h3>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_stams_mean.png"> <img src="output/ITS-phylum_stams_mean.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 5</b> - Average community composition at phylum level for samples collected in Stams grouped at sampling time point.
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+</div>
+<div id="pill" class="section level2 tabset">
+<h2 class="tabset">Pill</h2>
+<div id="single-samples-1" class="section level3">
+<h3>Single samples</h3>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_pill.png"> <img src="output/ITS-phylum_pill.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 6</b> - Community composition at phylum level for each sample of the full dataset including the outlier J3S11 (J3_S_15_R3_S4).
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+<div id="grouped-samples-1" class="section level3">
+<h3>Grouped samples</h3>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_pill_mean.png"> <img src="output/ITS-phylum_pill_mean.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 7</b> - Average community composition at phylum level for samples collected in Pill grouped at sampling time point.
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+</div>
+</div>
+<div id="section-1" class="section level1 unlisted unnumbered">
+<h1 class="unlisted unnumbered"></h1>
+<p><br/></p>
+</div>
+<div id="alpha-diversity" class="section level1 tabset">
+<h1 class="tabset">Alpha diversity</h1>
+<div id="stams-1" class="section level2">
+<h2>Stams</h2>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-alpha_stams.png"> <img src="output/ITS-alpha_stams.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 8</b> - Alpha diversity observed in samples collected in Stams.
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+<div id="stams-2" class="section level2">
+<h2>Stams</h2>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-alpha_pill.png"> <img src="output/ITS-alpha_pill.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 9</b> - Alpha diversity observed in samples collected in Pill.
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</div>
+</div>
+<div id="section-2" class="section level1 unlisted unnumbered">
+<h1 class="unlisted unnumbered"></h1>
+<p><br/></p>
+</div>
+<div id="venn-diagrams" class="section level1 tabset">
+<h1 class="tabset">Venn diagrams</h1>
+<div id="stams-3" class="section level2">
+<h2>Stams</h2>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-venn-stams.png"> <img src="output/ITS-venn-stams.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 10</b> - Venn diagram showing shared ASVs across treatment groups before and after the experiment.
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+<div id="pill-1" class="section level2">
+<h2>Pill</h2>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-venn-pill.png"> <img src="output/ITS-venn-pill.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 11</b> - Venn diagram showing shared ASVs across treatment groups before and after the experiment.
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+</div>
+<div id="section-3" class="section level1 unlisted unnumbered">
+<h1 class="unlisted unnumbered"></h1>
+<p><br/></p>
+</div>
+<div id="differntial-abundance" class="section level1 tabset">
+<h1 class="tabset">Differntial abundance</h1>
+<div id="stams-4" class="section level2">
+<h2>Stams</h2>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-lefse-stams.png"> <img src="output/ITS-lefse-stams.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 12</b> - Linear discriminant analysis of effect size for samples each treatment in Stams (before/after).
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+<div id="pill-2" class="section level2">
+<h2>Pill</h2>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-lefse-pill.png"> <img src="output/ITS-lefse-pill.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 13</b> - Linear discriminant analysis of effect size for samples from each treatment in Pill (before/after).
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+</div>
+<div id="section-4" class="section level1 unlisted unnumbered">
+<h1 class="unlisted unnumbered"></h1>
+<p><br/></p>
+</div>
+<div id="ordination" class="section level1 tabset">
+<h1 class="tabset">Ordination</h1>
+<div id="stams-5" class="section level2">
+<h2>Stams</h2>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-nmds-stams.png"> <img src="output/ITS-nmds-stams.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 14</b> - Non-metric multidimensional scaling for samples collected in Stams.
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+<div id="pill-3" class="section level2">
+<h2>Pill</h2>
+<center>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-nmds-pill.png"> <img src="output/ITS-nmds-pill.png" width="100%" /></a></p>
+<figcaption align="center">
+<b>Fig. 15</b> - Non-metric multidimensional scaling for samples collected in Pill
+</figcaption>
+<p>
+<em>click figure to see larger version</em>
+</p>
+</center>
+</div>
+</div>
+<div id="section-5" class="section level1 unlisted unnumbered">
+<h1 class="unlisted unnumbered"></h1>
+<p><br/></p>
+</div>
+<div id="permanova" class="section level1 tabset">
+<h1 class="tabset">PERMANOVA</h1>
+<div id="stams-6" class="section level2">
+<h2>Stams</h2>
+<pre><code>## Permutation: free
+## Number of permutations: 1000
+## 
+## Terms added sequentially (first to last)
+## 
+##            Df SumsOfSqs MeanSqs F.Model      R2   Pr(&gt;F)    
+## Treatment   3    0.2993 0.09978   1.416 0.08290 0.158841    
+## Time_point  1    1.4088 1.40881  19.993 0.39018 0.000999 ***
+## Residuals  27    1.9025 0.07046         0.52692             
+## Total      31    3.6107                 1.00000             
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="pill-4" class="section level2">
+<h2>Pill</h2>
+<pre><code>## Permutation: free
+## Number of permutations: 1000
+## 
+## Terms added sequentially (first to last)
+## 
+##            Df SumsOfSqs MeanSqs F.Model      R2   Pr(&gt;F)    
+## Treatment   3    0.4145 0.13817  1.7545 0.07086 0.002997 ** 
+## Time_point  1    0.7887 0.78870 10.0150 0.13483 0.000999 ***
+## Residuals  59    4.6464 0.07875         0.79431             
+## Total      63    5.8496                 1.00000             
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+</div>
+<div id="section-6" class="section level1 unlisted unnumbered">
+<h1 class="unlisted unnumbered"></h1>
+<p><br/></p>
+</div>
+<div id="pairwise-permanova" class="section level1 tabset">
+<h1 class="tabset">Pairwise PERMANOVA</h1>
+<div id="stams-7" class="section level2">
+<h2>Stams</h2>
+<pre><code>## 
+##  Pairwise comparisons using permutation MANOVAs on a distance matrix 
+## 
+## data:  vegdist(abund_tab_stams, method = &quot;bray&quot;) by group_tab_stams$Treatment_Time
+## 1000 permutations 
+## 
+##                 0.05_End 0.05_Start 0.15_End 0.15_Start 0_End 0_Start
+## 0.05_Start      0.62     -          -        -          -     -      
+## 0.15_End        1.00     0.98       -        -          -     -      
+## 0.15_Start      1.00     0.81       0.62     -          -     -      
+## 0_End           1.00     0.84       1.00     0.76       -     -      
+## 0_Start         1.00     0.64       0.70     1.00       0.98  -      
+## anaerobic_End   1.00     0.62       1.00     0.87       1.00  0.78   
+## anaerobic_Start 0.87     0.84       1.00     1.00       0.95  0.90   
+##                 anaerobic_End
+## 0.05_Start      -            
+## 0.15_End        -            
+## 0.15_Start      -            
+## 0_End           -            
+## 0_Start         -            
+## anaerobic_End   -            
+## anaerobic_Start 0.76         
+## 
+## P value adjustment method: bonferroni</code></pre>
+</div>
+<div id="pill-5" class="section level2">
+<h2>Pill</h2>
+<pre><code>## 
+##  Pairwise comparisons using permutation MANOVAs on a distance matrix 
+## 
+## data:  vegdist(abund_tab_pill, method = &quot;bray&quot;) by group_tab_pill$Treatment_Time
+## 1000 permutations 
+## 
+##                 0.05_End 0.05_Start 0.15_End 0.15_Start 0_End 0_Start
+## 0.05_Start      0.056    -          -        -          -     -      
+## 0.15_End        1.000    0.056      -        -          -     -      
+## 0.15_Start      0.028    0.028      0.028    -          -     -      
+## 0_End           1.000    0.028      1.000    0.028      -     -      
+## 0_Start         0.028    0.056      0.028    0.056      0.056 -      
+## anaerobic_End   1.000    0.028      1.000    0.028      1.000 0.056  
+## anaerobic_Start 0.028    0.140      0.028    0.252      0.028 0.056  
+##                 anaerobic_End
+## 0.05_Start      -            
+## 0.15_End        -            
+## 0.15_Start      -            
+## 0_End           -            
+## 0_Start         -            
+## anaerobic_End   -            
+## anaerobic_Start 0.028        
+## 
+## P value adjustment method: bonferroni</code></pre>
+</div>
+</div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -361,6 +727,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -1,5 +1,12 @@
 ---
 title: "**Fungi**"
+output:
+  html_document:
+    toc: true
+    toc_depth: 1
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
 ---
 
 ```{r setup, include=FALSE}
@@ -8,9 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <br/>
 
-### Data preparation {.tabset}
+# Data preparation {.tabset}
 
-#### Unfiltered
+## Unfiltered
 
 <center>
 <a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_unfiltered.png">
@@ -22,27 +29,253 @@ knitr::opts_chunk$set(echo = TRUE)
 <p>*click figure to see larger version*</p>
 </center>
 
-#### Filtered
+## Filtered
 
 <center>
 <a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtered.png">
     <img src="output/ITS-rarecurve_filtered.png" width="100%" /></a>
     
 <figcaption align = "center">
-    <b>Fig. 1</b> - Rarefaction curve of filtered data. The filter was set to in include ASVs with at least 2 reads in at least 10% of all samples.</figcaption>
+    <b>Fig. 2</b> - Rarefaction curve of filtered data. The filter was set to in include ASVs with at least 2 reads in at least 10% of all samples.</figcaption>
 
 <p>*click figure to see larger version*</p>
 </center>
 
-#### Rarefied (smallest sample)
+## Rarefied (smallest sample)
 
 <center>
 <a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtr.png">
     <img src="output/ITS-rarecurve_filtr.png" width="100%" /></a>
     
 <figcaption align = "center">
-    <b>Fig. 1</b> - Rarefaction curve of filtered and rarefied data. The data were rarefied to the smallest sample size.</figcaption>
+    <b>Fig. 3</b> - Rarefaction curve of filtered and rarefied data. The data were rarefied to the smallest sample size.</figcaption>
 
 <p>*click figure to see larger version*</p>
 </center>
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
+
+
+# Community composition 
+## Stams {.tabset}
+### Single samples
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_stams.png">
+    <img src="output/ITS-phylum_stams.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 4</b> - Community composition at phylum level for each sample of the full dataset</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+### Grouped samples
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_stams_mean.png">
+    <img src="output/ITS-phylum_stams_mean.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 5</b> - Average community composition at phylum level for samples collected in Stams grouped at sampling time point.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+
+## Pill {.tabset}
+### Single samples
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_pill.png">
+    <img src="output/ITS-phylum_pill.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 6</b> - Community composition at phylum level for each sample of the full dataset including the outlier J3S11 (J3_S_15_R3_S4).</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+### Grouped samples
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_pill_mean.png">
+    <img src="output/ITS-phylum_pill_mean.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 7</b> - Average community composition at phylum level for samples collected in Pill grouped at sampling time point.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
+
+
+# Alpha diversity {.tabset}
+## Stams
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-alpha_stams.png">
+    <img src="output/ITS-alpha_stams.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 8</b> - Alpha diversity observed in samples collected in Stams.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+## Stams
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-alpha_pill.png">
+    <img src="output/ITS-alpha_pill.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 9</b> - Alpha diversity observed in samples collected in Pill.</figcaption>
+
+<p>*click figure to see larger version*</p>
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
+
+
+# Venn diagrams {.tabset}
+## Stams
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-venn-stams.png">
+    <img src="output/ITS-venn-stams.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 10</b> - Venn diagram showing shared ASVs across treatment groups before and after the experiment.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+## Pill
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-venn-pill.png">
+    <img src="output/ITS-venn-pill.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 11</b> - Venn diagram showing shared ASVs across treatment groups before and after the experiment.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
+
+
+# Differntial abundance {.tabset}
+## Stams
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-lefse-stams.png">
+    <img src="output/ITS-lefse-stams.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 12</b> - Linear discriminant analysis of effect size for samples each treatment in Stams (before/after).</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+## Pill
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-lefse-pill.png">
+    <img src="output/ITS-lefse-pill.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 13</b> - Linear discriminant analysis of effect size for samples from each treatment in Pill (before/after).</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
+
+
+# Ordination {.tabset}
+## Stams
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-nmds-stams.png">
+    <img src="output/ITS-nmds-stams.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 14</b> - Non-metric multidimensional scaling for samples collected in Stams.</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+## Pill
+
+<center>
+<a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-nmds-pill.png">
+    <img src="output/ITS-nmds-pill.png" width="100%" /></a>
+    
+<figcaption align = "center">
+    <b>Fig. 15</b> - Non-metric multidimensional scaling for samples collected in Pill</figcaption>
+
+<p>*click figure to see larger version*</p>
+</center>
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
+
+
+# PERMANOVA {.tabset}
+## Stams
+```{r echo=F, warning=F, message=F}
+adonis_stams <- readRDS("output/ITS-adonis_stams.txt")
+adonis_stams$aov.tab
+```
+
+## Pill
+```{r echo=F, warning=F, message=F}
+adonis_pill <- readRDS("output/ITS-adonis_pill.txt")
+adonis_pill$aov.tab
+```
+
+
+
+# {.unlisted .unnumbered}
+<br/>
+
+
+
+# Pairwise PERMANOVA {.tabset}
+## Stams
+```{r echo=F, warning=F, message=F}
+ppermanova_stams <- readRDS("output/ITS-ppermanova_stams.txt")
+ppermanova_stams
+```
+
+## Pill
+```{r echo=F, warning=F, message=F}
+ppermanova_pill <- readRDS("output/ITS-ppermanova_pill.txt")
+ppermanova_pill
+```
 
