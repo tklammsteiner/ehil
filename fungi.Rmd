@@ -182,7 +182,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-# Differntial abundance {.tabset}
+# Differential abundance {.tabset}
 ## Stams
 
 <center>
