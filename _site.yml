@@ -14,8 +14,8 @@ navbar:
         href: fungi.html
 
   right: 
-    - icon: fa-envelope fa-lg
-      href: mailto:TBA@outlook.com
+    - icon: fa-github fa-lg
+      href: https://github.com/tklammsteiner/
 output_dir: "docs"
 output:
   html_document:

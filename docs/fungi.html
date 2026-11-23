@@ -13,7 +13,7 @@
 
 <title>Fungi</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.32/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
@@ -29,14 +29,14 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -65,6 +65,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -142,11 +146,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -175,8 +183,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -184,16 +192,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -316,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -332,7 +333,7 @@ div.tocify {
   <a href="data.html">Data</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Results
      
     <span class="caret"></span>
@@ -349,7 +350,7 @@ div.tocify {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="mailto:TBA@outlook.com">
+  <a href="mailto:klammsteiner@pm.me">
     <span class="fa fa-envelope fa-lg"></span>
      
   </a>
@@ -374,7 +375,8 @@ div.tocify {
 <div id="unfiltered" class="section level2">
 <h2>Unfiltered</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_unfiltered.png"> <img src="output/ITS-rarecurve_unfiltered.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_unfiltered.png">
+<img src="output/ITS-rarecurve_unfiltered.png" width="100%" /></a></p>
 <figcaption align="center">
 <b>Fig. 1</b> - Rarefaction curve of unfiltered data.
 </figcaption>
@@ -386,9 +388,11 @@ div.tocify {
 <div id="filtered" class="section level2">
 <h2>Filtered</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtered.png"> <img src="output/ITS-rarecurve_filtered.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtered.png">
+<img src="output/ITS-rarecurve_filtered.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 2</b> - Rarefaction curve of filtered data. The filter was set to in include ASVs with at least 2 reads in at least 10% of all samples.
+<b>Fig. 2</b> - Rarefaction curve of filtered data. The filter was set
+to in include ASVs with at least 2 reads in at least 10% of all samples.
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -398,9 +402,11 @@ div.tocify {
 <div id="rarefied-smallest-sample" class="section level2">
 <h2>Rarefied (smallest sample)</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtr.png"> <img src="output/ITS-rarecurve_filtr.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-rarecurve_filtr.png">
+<img src="output/ITS-rarecurve_filtr.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 3</b> - Rarefaction curve of filtered and rarefied data. The data were rarefied to the smallest sample size.
+<b>Fig. 3</b> - Rarefaction curve of filtered and rarefied data. The
+data were rarefied to the smallest sample size.
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -419,9 +425,11 @@ div.tocify {
 <div id="single-samples" class="section level3">
 <h3>Single samples</h3>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_stams.png"> <img src="output/ITS-phylum_stams.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_stams.png">
+<img src="output/ITS-phylum_stams.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 4</b> - Community composition at phylum level for each sample of the full dataset
+<b>Fig. 4</b> - Community composition at phylum level for each sample of
+the full dataset
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -431,9 +439,11 @@ div.tocify {
 <div id="grouped-samples" class="section level3">
 <h3>Grouped samples</h3>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_stams_mean.png"> <img src="output/ITS-phylum_stams_mean.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_stams_mean.png">
+<img src="output/ITS-phylum_stams_mean.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 5</b> - Average community composition at phylum level for samples collected in Stams grouped at sampling time point.
+<b>Fig. 5</b> - Average community composition at phylum level for
+samples collected in Stams grouped at sampling time point.
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -446,9 +456,11 @@ div.tocify {
 <div id="single-samples-1" class="section level3">
 <h3>Single samples</h3>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_pill.png"> <img src="output/ITS-phylum_pill.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_pill.png">
+<img src="output/ITS-phylum_pill.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 6</b> - Community composition at phylum level for each sample of the full dataset including the outlier J3S11 (J3_S_15_R3_S4).
+<b>Fig. 6</b> - Community composition at phylum level for each sample of
+the full dataset including the outlier J3S11 (J3_S_15_R3_S4).
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -458,9 +470,11 @@ div.tocify {
 <div id="grouped-samples-1" class="section level3">
 <h3>Grouped samples</h3>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_pill_mean.png"> <img src="output/ITS-phylum_pill_mean.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-phylum_pill_mean.png">
+<img src="output/ITS-phylum_pill_mean.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 7</b> - Average community composition at phylum level for samples collected in Pill grouped at sampling time point.
+<b>Fig. 7</b> - Average community composition at phylum level for
+samples collected in Pill grouped at sampling time point.
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -478,7 +492,8 @@ div.tocify {
 <div id="stams-1" class="section level2">
 <h2>Stams</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-alpha_stams.png"> <img src="output/ITS-alpha_stams.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-alpha_stams.png">
+<img src="output/ITS-alpha_stams.png" width="100%" /></a></p>
 <figcaption align="center">
 <b>Fig. 8</b> - Alpha diversity observed in samples collected in Stams.
 </figcaption>
@@ -490,7 +505,8 @@ div.tocify {
 <div id="stams-2" class="section level2">
 <h2>Stams</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-alpha_pill.png"> <img src="output/ITS-alpha_pill.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-alpha_pill.png">
+<img src="output/ITS-alpha_pill.png" width="100%" /></a></p>
 <figcaption align="center">
 <b>Fig. 9</b> - Alpha diversity observed in samples collected in Pill.
 </figcaption>
@@ -508,9 +524,11 @@ div.tocify {
 <div id="stams-3" class="section level2">
 <h2>Stams</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-venn-stams.png"> <img src="output/ITS-venn-stams.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-venn-stams.png">
+<img src="output/ITS-venn-stams.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 10</b> - Venn diagram showing shared ASVs across treatment groups before and after the experiment.
+<b>Fig. 10</b> - Venn diagram showing shared ASVs across treatment
+groups before and after the experiment.
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -520,9 +538,11 @@ div.tocify {
 <div id="pill-1" class="section level2">
 <h2>Pill</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-venn-pill.png"> <img src="output/ITS-venn-pill.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-venn-pill.png">
+<img src="output/ITS-venn-pill.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 11</b> - Venn diagram showing shared ASVs across treatment groups before and after the experiment.
+<b>Fig. 11</b> - Venn diagram showing shared ASVs across treatment
+groups before and after the experiment.
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -539,9 +559,11 @@ div.tocify {
 <div id="stams-4" class="section level2">
 <h2>Stams</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-lefse-stams.png"> <img src="output/ITS-lefse-stams.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-lefse-stams.png">
+<img src="output/ITS-lefse-stams.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 12</b> - Linear discriminant analysis of effect size for samples each treatment in Stams (before/after).
+<b>Fig. 12</b> - Linear discriminant analysis of effect size for samples
+each treatment in Stams (before/after).
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -551,9 +573,11 @@ div.tocify {
 <div id="pill-2" class="section level2">
 <h2>Pill</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-lefse-pill.png"> <img src="output/ITS-lefse-pill.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-lefse-pill.png">
+<img src="output/ITS-lefse-pill.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 13</b> - Linear discriminant analysis of effect size for samples from each treatment in Pill (before/after).
+<b>Fig. 13</b> - Linear discriminant analysis of effect size for samples
+from each treatment in Pill (before/after).
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -570,9 +594,11 @@ div.tocify {
 <div id="stams-5" class="section level2">
 <h2>Stams</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-nmds-stams.png"> <img src="output/ITS-nmds-stams.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-nmds-stams.png">
+<img src="output/ITS-nmds-stams.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 14</b> - Non-metric multidimensional scaling for samples collected in Stams.
+<b>Fig. 14</b> - Non-metric multidimensional scaling for samples
+collected in Stams.
 </figcaption>
 <p>
 <em>click figure to see larger version</em>
@@ -582,9 +608,11 @@ div.tocify {
 <div id="pill-3" class="section level2">
 <h2>Pill</h2>
 <center>
-<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-nmds-pill.png"> <img src="output/ITS-nmds-pill.png" width="100%" /></a></p>
+<p><a href="https://raw.githubusercontent.com/tklammsteiner/ehil/main/docs/output/ITS-nmds-pill.png">
+<img src="output/ITS-nmds-pill.png" width="100%" /></a></p>
 <figcaption align="center">
-<b>Fig. 15</b> - Non-metric multidimensional scaling for samples collected in Pill
+<b>Fig. 15</b> - Non-metric multidimensional scaling for samples
+collected in Pill
 </figcaption>
 <p>
 <em>click figure to see larger version</em>

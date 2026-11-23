@@ -1,12 +1,12 @@
 ---
-title: "**About**"
+title: "Einsatz von Holzkohle in der industriellen Landwirtschaft"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Einsatz von Holzkohle in der industriellen Landwirtschaft  
+## (The use of charcoal in industrial agriculture)
 
 Nina V. Schaaf<sup>1</sup>, Thomas Haemmerle<sup>1</sup>, Thomas Klammsteiner<sup>2, 3</sup>, Felix Kurzemann<sup>2</sup>, Benjamin Hupfauf<sup>1</sup>
 
@@ -14,7 +14,10 @@ Nina V. Schaaf<sup>1</sup>, Thomas Haemmerle<sup>1</sup>, Thomas Klammsteiner<su
 <sup>2</sup>Department of Microbiology, University of Innsbruck, Innsbruck, Austria  
 <sup>3</sup>Department of Ecology, University of Innsbruck, Innsbruck, Austria  
   
-<br/>
+## About
+Climate change is bringing more drought, heavy rain and crop losses to Austrian agriculture. EHIL tests whether charcoal can help. The charcoal is a byproduct of a regional wood-fired combined heat and power plant and is added to compost made from regional biogenic resources. The aim is a high-quality compost that keeps nutrients in the soil, stores water and binds carbon over the long term, while creating value in the region.
+
+The project is practice-oriented and carried out with industry partners. It is funded by the Tiroler Innovationsförderung. To see how charcoal-amended compost affects soil life, we profiled the bacterial and fungal communities in our samples by amplicon sequencing. This site presents the data and results.
 
 ### Overview 
 Illumina MiSeq amplicon sequencing was performed to investigate bacterial and fungal communities within the samples. The bacterial V3-4 region was targeted using the primer set **341F** (CCTACGGGNGGCWGCAG) and **805R** (GACTACHVGGGTATCTAATCC), while the primer set **ITS3** (GCATCGATGAAGAACGCAGC) and **ITS4** (TCCTCCGCTTATTGATATGC) was used to target the fungal ITS2 region.
